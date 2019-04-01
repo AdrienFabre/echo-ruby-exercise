@@ -4,11 +4,15 @@ class Echo
     print 'Say something:'
   end
 
-  def self.receive
+  def self.receive_message
     gets.delete!('/n')
   end
 
-  def self.time_received
+  def self.format_time_received
     Time.now.strftime('%Y-%m-%d | %H:%M')
+  end
+
+  def self.format_entire_string
+    print format_time_received + " | You said: '" + receive_message + "'!"
   end
 end
