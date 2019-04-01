@@ -3,18 +3,17 @@
 
 An app that repeats what you say until you exit it!
 
-Requirements
-The app runs on the command line or.
+Requirements:
 
-It's fine to use Ruby or JavaScript.
+- The app runs on the command line or.
 
-When the app runs you are prompted with a phrase to say something
+- It's fine to use Ruby or JavaScript.
 
-The output also has information about the date and time formatted as below.
+- When the app runs you are prompted with a phrase to say something
 
-The app continues to prompt you to say something until you type exit
+- The output also has information about the date and time formatted as below.
 
-when you type exit the app outputs 'Goodbye!' and then ends.
+- The app continues to prompt you to say something until you type exit when you type exit the app outputs 'Goodbye!' and then ends.
 
 Example interaction:
 
