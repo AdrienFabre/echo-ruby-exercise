@@ -1,29 +1,31 @@
 
 class Echo
-  def self.prompt
-    puts 'Say something:'
+  def starts
+    loop do
+      prompt_user
+      break if input?
+
+      puts string_formated
+    end
+    puts 'Goodbye'
   end
 
-  def self.receive_message
+  private
+
+  def prompt_user
+    puts 'Say something:'
     @input = gets.chomp
   end
 
-  def self.format_time_received
+  def format_time_received
     Time.now.strftime('%Y-%m-%d | %H:%M')
   end
 
-  def self.input?
+  def input?
     @input == 'exit'
   end
 
-  def self.starts
-    loop do
-      prompt
-      receive_message
-      break if input?
-
-      puts format_time_received + " | You said: '" + @input + "'!"
-    end
-    puts 'Goodbye'
+  def string_formated
+    format_time_received + " | You said: '" + @input + "'!"
   end
 end
