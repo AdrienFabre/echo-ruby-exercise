@@ -1,18 +1,29 @@
 
 class Echo
   def self.prompt
-    print 'Say something:'
+    puts 'Say something:'
   end
 
   def self.receive_message
-    gets.delete!('/n')
+    @input = gets.chomp
   end
 
   def self.format_time_received
     Time.now.strftime('%Y-%m-%d | %H:%M')
   end
 
-  def self.format_entire_string
-    print format_time_received + " | You said: '" + receive_message + "'!"
+  def self.input?
+    @input == 'exit'
+  end
+
+  def self.starts
+    loop do
+      prompt
+      receive_message
+      break if input?
+
+      puts format_time_received + " | You said: '" + @input + "'!"
+    end
+    puts 'Goodbye'
   end
 end
